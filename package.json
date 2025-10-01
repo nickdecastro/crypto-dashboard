@@ -1,0 +1,14 @@
+{
+  "name": "crypto-dashboard",
+  "version": "25.8.0",
+  "description": "Top 20 crypto dashboard with trends, sparklines, and logging",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}

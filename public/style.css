@@ -1,0 +1,120 @@
+/* General body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: lightgrey;
+}
+
+/* Title and header container */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+  background-color: #111;
+  color: lightgrey;
+  height: 50px; /* fixed height for title row + timestamp */
+  box-sizing: border-box;
+  gap: 20px; /* add spacing between items */
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 2em; /* slightly smaller than double */
+  color: orange; /* changed from lightgrey */
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+#timestamp {
+  font-size: 1.2em;
+  color: orange; /* changed from lightgrey */
+  text-align: right;
+  flex: 1 1 auto;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+thead th {
+  text-align: center;
+  padding: 4px;
+  background-color: #222;
+  color: orange; /* changed from lightgrey */
+  font-weight: bold;
+  font-size: 1.3em; /* larger than data, smaller than title */
+}
+
+tbody td {
+  text-align: center;
+  padding: 2px 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.1em;
+}
+
+/* Dynamic row height: fit 20 rows to remaining viewport space */
+tbody tr {
+  height: calc((100vh - 50px - 28px) / 20); /* 50px header + 28px table header */
+}
+
+/* Signal colors */
+td {
+  color: lightgrey;
+}
+
+td.trend-up { color: green; }
+td.trend-down { color: red; }
+td.trend-neutral { color: #888; }
+
+/* Table row stripes */
+tbody tr:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #111;
+}
+
+/* Watchlist specific styles */
+.watch-cell {
+  text-align: center;
+  width: 36px;
+  padding: 0 4px;
+}
+
+.watch-icon {
+  font-size: 1.3em;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.watch-icon.watched {
+  color: orange;
+  text-shadow: 0 0 2px #ffb84d;
+}
+
+tr.watched-row {
+  background-color: #332200 !important;
+  /* warm dark gold, still fits dark theme */
+}
+
+#disclaimer {
+  color: orange;
+  font-size: 1.2em;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  flex: 1 1 auto;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
